@@ -1,0 +1,110 @@
+<html><head><base href="." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honey Chat</title>
+<link rel="stylesheet" href="./style/style.css">
+<script src="./js/script.js"></script>
+</head>
+<body>
+  <button class="hamburger-menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  <button class="close-sidebar">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+  <div class="mobile-overlay"></div>
+  <div class="sidebar">
+    <button class="new-chat-btn">
+      <span>New Chat</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+    </button>
+    <button class="clear-all-chats-btn">
+      <span>Clear All Chats</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18"></path>
+        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+      </svg>
+    </button>
+    <div class="chat-history">
+      <div class="history-group">
+        <div class="history-date">Today</div>
+      </div>
+    </div>
+    <button class="settings-btn">
+      <span>Settings</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="main-content">
+    <div class="model-selector">
+      <button class="model-btn active" data-model="gpt">ChatGPT</button>
+      <button class="model-btn" data-model="gemini">Gemini</button>
+      <button class="model-btn" data-model="groq">Groq</button>
+    </div>
+    
+    <div class="chat-container">
+    </div>
+
+    <div class="input-container">
+      <textarea class="message-input" placeholder="Type your message here..."></textarea>
+      <button class="send-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="settings-modal">
+    <div class="settings-content">
+      <div class="settings-header">
+        <h2>API Settings</h2>
+        <button class="close-settings">&times;</button>
+      </div>
+      <div class="api-input-group">
+        <label for="openai-key">OpenAI API Key</label>
+        <input type="password" id="openai-key" placeholder="Enter your OpenAI API key">
+      </div>
+      <div class="api-input-group">
+        <label for="gemini-key">Gemini API Key</label>
+        <input type="password" id="gemini-key" placeholder="Enter your Gemini API key">
+      </div>
+      <div class="api-input-group">
+        <label for="groq-key">Groq API Key</label>
+        <input type="password" id="groq-key" placeholder="Enter your Groq API key">
+      </div>
+      <div class="api-input-group">
+        <label for="language-select">Idioma / Language</label>
+        <select id="language-select" class="language-select">
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <div class="api-input-group">
+        <label for="theme-select">Theme</label>
+        <select id="theme-select" class="theme-select">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+      <button class="save-settings">Save Settings</button>
+    </div>
+  </div>
+</body>
+</html>
